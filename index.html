@@ -4,30 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <title>Valentine's Envelope</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="heart_image.jpg" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Audio Player -->
+    <audio id="background-audio">
+        <source src="tu-hain-toh-main-hoon-sky-force-128-kbps_f7JfUqNJ.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="container">
         <div class="envelope-wrapper">
             <div class="envelope">
                 <div class="letter">
                     <div class="text">
-                        <strong>My Valentine</strong>
+                        <style>
+                            .text {
+                                font-family: 'Grechen Fuemen', cursive;
+                                font-size: 1.2rem;
+                                line-height: 1.5;
+                                text-align: justify;
+                            }
+                        </style>
+                        <strong>My Valentine ❤️</strong>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Numquam labore omnis minus maiores laboriosam, facere in beatae esse. 
+                            May I hold your hand please, because I am falling, falling in love with you.
                         </p>
+                        <h2>Happy Valentine❤️💖💘💕💞💓💗💙💜💛💚🧡💝💟❣️</h2>
                     </div>
                 </div>
             </div>
             <div class="heart"></div>
         </div>
     </div>
+
     <script>
+        // Envelope open/close on click
         const envelope = document.querySelector('.envelope-wrapper');
+        const audio = document.getElementById('background-audio');
+
         envelope.addEventListener('click', () => {
             envelope.classList.toggle('flap');
+            if (envelope.classList.contains('flap')) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         });
     </script>
 </body>

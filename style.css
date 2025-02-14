@@ -8,6 +8,35 @@
   --txt-color: #444;
   --heart-color: rgb(252, 8, 231);
 }
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  background: no-repeat;
+  background-size: cover;
+}
+
+audio {
+  display: none; /* Hide the audio player */
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -18,7 +47,8 @@ body{
   justify-content: center;
 }
 .container {
-  height: 100vh;
+  height: 110vh; /* Increased height */
+  width: 110vw; /* Increased width */
   display: grid;
   place-items: center;
 }
